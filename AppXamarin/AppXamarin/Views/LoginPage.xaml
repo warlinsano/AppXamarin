@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AppXamarin.Views.LoginPage"
+             Title="{Binding Title}">
+
+    <!--<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+    </StackLayout>-->
+
+    <!--<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Label Text="firt App created by Warlin Sano" />
+        <Label Text="User" />
+        <Entry Text="{Binding user}" Placeholder="Entre el usurario"> </Entry>
+        <Button Text="Acetar"></Button>
+
+        <Label Text="cargardo..." IsVisible="False" x:Name="labelLoading" />
+        <WebView x:Name="webview" WidthRequest="1000" HeightRequest="1000"/>
+    </StackLayout>-->
+
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10" >
+            <Label Text="Empleados" 
+                   FontSize="24"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontAttributes="Bold" 
+                   TextColor="Black"/>
+            <Entry x:Name="nombresEntry" 
+                   Placeholder="Nombres" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Text="{Binding Nombre}"/>
+            <Entry x:Name="apellidosEntry"
+                   Placeholder="Apellidos" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Text="{Binding Apellidos}"/>
+            <Entry x:Name="salarioEntry" 
+                   Placeholder="Salario" 
+                   Keyboard="Numeric" 
+                   FontSize="14" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fecha: " 
+                       VerticalOptions="Center" />
+                <DatePicker x:Name="fechaContratoDatePicker"/>
+                <Label Text="Activo: "
+                       VerticalOptions="Center"
+                       HorizontalOptions="EndAndExpand"
+                       FontSize="18"
+                       TextColor="Black"/>
+                <Switch x:Name="activoSwitch"
+                        IsToggled="True"
+                        HorizontalOptions="End"/>
+            </StackLayout>
+
+            <Button x:Name="agregarButton" 
+                    Text="Agregar"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Yellow"
+                    TextColor="Black"
+                    IsEnabled="{Binding IsEnabled}"
+                     Command="{Binding agregarButton}"/>
+
+            <Button x:Name="btnListarNacionalidades" 
+                    Text="Listar Nacionalidades"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Yellow"
+                    TextColor="Black"
+                     Command="{Binding btnListarNacionalidades}"/>
+
+            <Button x:Name="btnListarEmpleados" 
+                    Text="Listar Empleados"                 
+                    BackgroundColor="Blue"
+                    TextColor="Black"
+                     Command="{Binding btnListarEmpleados}"/>
+
+            <ListView x:Name="datosListView"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
